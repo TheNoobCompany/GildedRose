@@ -1,8 +1,8 @@
 ﻿namespace GildedRose.Console
 {
-    public class LegendaryItem : Item, ICanSelfUpdate
+    public class LegendaryItem : UpdateableItem
     {
-        public void Update()
+        public override void Update()
         {
         }
     }

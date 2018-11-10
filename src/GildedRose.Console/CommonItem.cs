@@ -1,16 +1,16 @@
 ﻿namespace GildedRose.Console
 {
-    public class CommonItem : Item, ICanSelfUpdate
+    public class CommonItem : UpdateableItem
     {
-        public void Update()
+        public override void Update()
         {
-            InventoryManager.DecreaseQualityIfGreaterThanZero(this);
+            DecreaseQualityIfGreaterThanZero();
 
-            InventoryManager.DecreaseSellIn(this);
+            DecreaseSellIn();
 
             if (SellIn < 0)
             {
-                InventoryManager.DecreaseQualityIfGreaterThanZero(this);
+                DecreaseQualityIfGreaterThanZero();
             }
         }
     }

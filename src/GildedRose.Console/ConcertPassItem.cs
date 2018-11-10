@@ -1,24 +1,24 @@
 ﻿namespace GildedRose.Console
 {
-    public class ConcertPassItem : Item, ICanSelfUpdate
+    public class ConcertPassItem : UpdateableItem
     {
-        public void Update()
+        public override void Update()
         {
-            InventoryManager.IncreaseQualityIfLowerThanFifty(this);
+            IncreaseQualityIfLowerThanFifty();
 
             if (SellIn < 11)
             {
-                InventoryManager.IncreaseQualityIfLowerThanFifty(this);
+                IncreaseQualityIfLowerThanFifty();
             }
 
             if (SellIn < 6)
             {
-                InventoryManager.IncreaseQualityIfLowerThanFifty(this);
+                IncreaseQualityIfLowerThanFifty();
             }
 
-            InventoryManager.DecreaseSellIn(this);
+            DecreaseSellIn();
 
-            InventoryManager.ResetQualityIfExpired(this);
+            ResetQualityIfExpired();
         }
     }
 }

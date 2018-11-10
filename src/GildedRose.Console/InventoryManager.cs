@@ -16,39 +16,10 @@ namespace GildedRose.Console
 
         private static void UpdateItem(Item currentItem)
         {
-            if (currentItem is ICanSelfUpdate updateableItem)
+            if (currentItem is UpdateableItem updateableItem)
             {
                 updateableItem.Update();
             }
-        }
-
-        public static void ResetQualityIfExpired(Item currentItem)
-        {
-            if (currentItem.SellIn < 0)
-            {
-                currentItem.Quality = 0;
-            }
-        }
-
-        public static void DecreaseQualityIfGreaterThanZero(Item currentItem)
-        {
-            if (currentItem.Quality > 0)
-            {
-                currentItem.Quality--;
-            }
-        }
-
-        public static void IncreaseQualityIfLowerThanFifty(Item currentItem)
-        {
-            if (currentItem.Quality < 50)
-            {
-                currentItem.Quality++;
-            }
-        }
-
-        public static void DecreaseSellIn(Item currentItem)
-        {
-            currentItem.SellIn--;
         }
     }
 }

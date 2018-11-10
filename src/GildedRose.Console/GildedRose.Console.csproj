@@ -44,7 +44,7 @@
     <Compile Include="CheeseItem.cs" />
     <Compile Include="CommonItem.cs" />
     <Compile Include="ConcertPassItem.cs" />
-    <Compile Include="ICanSelfUpdate.cs" />
+    <Compile Include="UpdateableItem.cs" />
     <Compile Include="InventoryManager.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="LegacyInventoryManager.cs" />

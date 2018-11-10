@@ -1,16 +1,16 @@
 ﻿namespace GildedRose.Console
 {
-    public class CheeseItem : Item, ICanSelfUpdate
+    public class CheeseItem : UpdateableItem
     {
-        public void Update()
+        public override void Update()
         {
-            InventoryManager.IncreaseQualityIfLowerThanFifty(this);
+            IncreaseQualityIfLowerThanFifty();
 
-            InventoryManager.DecreaseSellIn(this);
+            DecreaseSellIn();
 
             if (SellIn < 0)
             {
-                InventoryManager.IncreaseQualityIfLowerThanFifty(this);
+                IncreaseQualityIfLowerThanFifty();
             }
         }
     }
